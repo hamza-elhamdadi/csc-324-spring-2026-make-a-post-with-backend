@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.4rem;
+    font-family:'Courier New', Courier, monospace
+}
+
+/* Page Wrapper */
+
+.wrapper {
+    max-inline-size: 1200px;
+    margin: auto;
+}
+
+/* Header and Navbar */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-block-end: 2px solid black;
+}
+
+.navbar-icon {
+    inline-size: 3em;
+}
+
+.nav-list {
+    list-style-type: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: dotted;
+}
+
+/* Main Page */
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    margin-block-start: 20px;
+
+    @media (width < 800px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sidebar */
+
+.sidebar {
+    display: flex;
+    justify-content: center;
+
+    margin-block: 20px;
+    margin-inline: 10px;
+}
+
+.sidebar li {
+    margin-block: 1em;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+/* Form */
+
+.sidebar form {
+    inline-size: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-inline: 10px;
+
+    @media (width < 800px) {
+        inline-size: 60vw;
+    }
+}
+
+.form-label {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-inline-start: 10px;
+    color: #93acce;
+}
+
+.form-text {
+    inline-size: 100%;
+    padding: 10px;
+    border: 1px solid #849ab7;
+    font-size: 1rem;
+    color: #60799c;
+
+    margin-block: 10px;
+
+    border-radius: 10px;
+
+    resize: none;
+}
+
+.form-button {
+    font-family:'Courier New', Courier, monospace;
+    inline-size: 100%;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 800;
+    background-color: #b5d1f9;
+    color: #60799c;
+}
+
+.form-button:hover {
+    background-color: #7593bc;
+    color: #b5d1f9;
+}
+
+/* Posts */
+
+.post-container {
+    block-size: 80vh;
+    overflow-y: scroll;
+}
+
+.post {
+    margin: 10px;
+    padding: 15px;
+    border: 2px solid #b5d1f9;
+    border-radius: 10px;
+}
+
+.post p {
+    margin-block: 5px;
+    text-align: start;
+}
+
+.profile-pic {
+    inline-size: 2em;
+    margin-block-start: 10px;
+}

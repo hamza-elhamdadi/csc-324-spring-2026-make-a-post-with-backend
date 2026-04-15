@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Intro to JavaScript DOM</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="a test for connecting backend" />
+
+        <link rel="stylesheet" href="./css/styles.css" />
+
+        <script type="module">
+            import App from "./js/posts.js";
+
+            const app = new App();
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <a href="#"><img class="navbar-icon" src="images/tree-icon.png" /></a>
+                <nav>
+                    <ul class="nav-list">
+                        <li><a href="index.html">Home</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <aside class="sidebar">
+                    <form id="add-post" disabled>
+                        <label class="form-label" for="post-body">Write a post</label>
+                        <input class="form-text" id="post-body" type="text" />
+
+                        <button class="form-button">Submit Post</button>
+                    </form>
+                </aside>
+                <div>
+                    <button class="form-button" id="sort">Sort Posts</button>
+                    <article class="post-container" id="post-container">
+                    </article>
+                </div>
+            </main>
+            <footer>
+            
+            </footer>
+        </div>
+    </body>
+</html>
