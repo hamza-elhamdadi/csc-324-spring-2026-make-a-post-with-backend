@@ -68,7 +68,8 @@ class App {
             this.createPost(text, profilePic);
         }
 
-        // the post form is disabled in the HTML after we fetch the data from posts.json and load all of the posts
+        // the post form is disabled in the HTML (see line 29 of index.html)
+        // We only enable it here in this loadPosts method after we fetch the data from posts.json and load all of the posts
         // this way, the user can't add posts until all of the existing posts are loaded
 
         // enable the post form and give it a submit listener
