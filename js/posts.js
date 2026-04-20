@@ -2,11 +2,12 @@ class SocialMediaPost {
     constructor(parentElement, text, profilePicURL){
         this.parentElement = parentElement;
         this.text = text;
+        this.profilePicURL = profilePicURL;
 
         // build the profile pic img
         const image = document.createElement("img");
         image.classList.add("profile-pic");
-        image.src = profilePicURL;
+        image.src = this.profilePicURL;
 
         // build the post text paragraph
         const p = document.createElement('p');
