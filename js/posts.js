@@ -63,7 +63,7 @@ class App {
 
         const data = await response.json();
         
-        // this for loop deconstructs each object of the data array into its properties
+        // this for loop deconstructs each object of the data array into its properties: text and profilePic
         for(const { text, profilePic } of data){
             this.createPost(text, profilePic);
         }
