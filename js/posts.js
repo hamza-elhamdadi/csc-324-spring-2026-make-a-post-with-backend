@@ -98,11 +98,12 @@ class App {
         }
 
         this.createPost(obj); // then we pass the object to createPost
-        this.textInput.value = "";
+        this.textInput.value = ""; // once we've created the post, we can clear the text <input>
 
         event.preventDefault(); // prevent default behavior of <form> submit event only if nothing went wrong inside of this event handler (submitPost)
     }
 
+    // this method sorts this.posts
     sortPosts(){
         // this.posts is an Array
         //      Arrays have a method called .sort() which sorts the array in place based on a callback function
@@ -116,7 +117,7 @@ class App {
         this.refreshPosts();
     }
 
-    // this function is only ever called in sortPosts (above)
+    // this method is only ever called in sortPosts (above)
     refreshPosts(){
         // sorting the this.posts Array does not update the DOM
         // after we sort this.posts,
