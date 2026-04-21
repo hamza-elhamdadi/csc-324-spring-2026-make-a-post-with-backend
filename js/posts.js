@@ -50,10 +50,10 @@ class App {
         this.sortButton = document.getElementById('sort');
         this.posts = [];
 
-        // bind any function that (1) is used as an event handler and (2) uses "this"
-        this.createPost = this.createPost.bind(this);
+        // bind any App method that (1) is passed as an event handler and (2) uses "this"
+        //      Note: createPost and refreshPosts both use "this", but neither function is passed to addEventListener
         this.submitPost = this.submitPost.bind(this);
-        this.sortPosts = this.sortPosts.bind(this);
+        this.sortPosts = this.sortPosts.bind(this);        
 
         // load the posts that already exist in data/posts.json
         this.loadPosts();
@@ -74,7 +74,7 @@ class App {
 
         // the post form is already disabled in the HTML (see line 29 of index.html)
         // We only enable it here in this loadPosts method AFTER we fetch the data from posts.json and load all of the posts (lines 66 through 73 above)
-        // this way, the user can't submit new posts until all of the existing posts have been loaded
+        // this way, the user can't submit new social media posts until all of the existing posts have been loaded
 
         // enable the post form and give it a submit listener
         this.postForm.addEventListener('submit', this.submitPost);
