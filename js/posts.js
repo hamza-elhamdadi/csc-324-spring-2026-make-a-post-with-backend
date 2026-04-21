@@ -62,11 +62,11 @@ class App {
     async loadPosts(){
         const response = await fetch('data/posts.json');
 
-        const data = await response.json();
+        const data = await response.json(); // data is an array of objects { text: "...", profilePic: "..." }
         
-        // this for loop deconstructs each object of the data array into its properties: text and profilePic
-        for(const { text, profilePic } of data){
-            this.createPost(text, profilePic);
+        // create a new post with each data object in the data array
+        for(const obj of data){
+            this.createPost(obj);
         }
 
         // the post form is disabled in the HTML (see line 29 of index.html)
@@ -81,13 +81,19 @@ class App {
         this.sortButton.addEventListener("click", this.sortPosts);
     }
 
-    createPost(text, profilePic){
-        const post = new SocialMediaPost(this.postContainer, text, profilePic);
+    createPost(obj){
+        const post = new SocialMediaPost(this.postContainer, obj.text, obj.profilePic);
         this.posts.push(post);
     }
 
     submitPost(event){
-        this.createPost(this.textInput.value, "images/tree-icon.png");
+        // createPost takes as an argument an object with properties: text and profilePic
+        // here, we build the object first
+        const obj = {
+            text: this.textInput.value,
+            profilePic: "images/tree-icon.png"
+        }
+        this.createPost(obj); // then we pass the object to createPost
         this.textInput.value = "";
 
         event.preventDefault();
