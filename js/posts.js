@@ -19,7 +19,7 @@ class SocialMediaPost {
         this.div.appendChild(image);
         this.div.appendChild(p);
 
-        // add the div to the DOM
+        // adds the div to the parentElement in the DOM
         this.addToDOM();
     }
 
