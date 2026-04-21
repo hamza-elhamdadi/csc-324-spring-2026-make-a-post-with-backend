@@ -25,8 +25,8 @@ class SocialMediaPost {
 
     // compare this post with another
     localeCompare(otherPost){
-        // returns -1 if this.text lexicographically comes before otherPost.text
-        // returns  1 if this.text lexicographically comes after otherPost.text
+        // returns -1 if this.text lexicographically (alphanumerically) comes before otherPost.text
+        // returns  1 if this.text lexicographically (alphanumerically) comes after otherPost.text
         // returns  0 if this.text === otherPost.text
         return this.text.localeCompare(otherPost.text);
     }
@@ -100,18 +100,31 @@ class App {
         this.createPost(obj); // then we pass the object to createPost
         this.textInput.value = "";
 
-        event.preventDefault();
+        event.preventDefault(); // prevent default behavior of <form> submit event only if nothing went wrong inside of this event handler (submitPost)
     }
 
     sortPosts(){
+        // this.posts is an Array
+        //      Arrays have a method called .sort() which sorts the array in place based on a callback function
+        //      the callback function takes in two arguments (a, b)
+        //         and returns a number 
+        //              if the number is negative, .sort ensures that a comes before b
+        //              if the number is positive, .sort ensures that b comes before a
+        //              if the number is 0, .sort knows that a === b, either a or b can come first
+        // check the localeCompare method in the SocialMediaPost class to see what post1.localCompare(post2) returns
         this.posts.sort((post1, post2) => post1.localeCompare(post2));
         this.refreshPosts();
     }
 
+    // this function is only ever called in sortPosts (above)
     refreshPosts(){
+        // sorting the this.posts Array does not update the DOM
+        // after we sort this.posts,
+        //     we need to remove all of the SocialMediaPosts from the DOM, and
+        //                add them back to the DOM in the correct order
         for(const post of this.posts){
-            post.remove();
-            post.addToDOM();
+            post.remove(); // check the remove method in the SocialMediaPost class
+            post.addToDOM(); // check the addToDOM method in the SocialMediaPost class
         }
     }
 
