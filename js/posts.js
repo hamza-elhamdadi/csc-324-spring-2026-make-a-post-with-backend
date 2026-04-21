@@ -93,6 +93,7 @@ class App {
             text: this.textInput.value,
             profilePic: "images/tree-icon.png"
         }
+
         this.createPost(obj); // then we pass the object to createPost
         this.textInput.value = "";
 
