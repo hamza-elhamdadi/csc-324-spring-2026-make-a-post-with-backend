@@ -5,7 +5,7 @@ const app = express();
 app.use(express.static('public'));
 
 app.get('/data', function(req, res){
-    const obj = [
+    const data = [
             {
                 "text": "What a lovely day!",
                 "profilePic": "images/tree-icon.png"
@@ -19,7 +19,7 @@ app.get('/data', function(req, res){
                 "profilePic": "images/tree-icon.png"
             }
         ];
-    res.json(obj);
+    res.json(data);
 });
 
 app.listen(3000, function(){
