@@ -14,10 +14,10 @@ class SocialMediaPost {
         p.textContent = this.text;
 
         // create the div to hold both the img and the paragraph
-        this.div = document.createElement("div");
-        this.div.classList.add("post");
-        this.div.appendChild(image);
-        this.div.appendChild(p);
+        this.article = document.createElement("article");
+        this.article.classList.add("post");
+        this.article.appendChild(image);
+        this.article.appendChild(p);
 
         // adds the div to the parentElement in the DOM
         this.addToDOM();
@@ -33,12 +33,12 @@ class SocialMediaPost {
 
     // removes the div from the DOM
     remove(){
-        this.div.remove();
+        this.article.remove();
     }
 
     // adds the div to the DOM
     addToDOM(){
-        this.parentElement.appendChild(this.div);
+        this.parentElement.appendChild(this.article);
     }
 }
 
@@ -63,7 +63,7 @@ class App {
     // and creates a SocialMediaPost object for each post object
     //          Note: data/posts.json contains an array of objects in the format { text: "...", profilePic: "..." }
     async loadPosts(){
-        const response = await fetch('data/posts.json');
+        const response = await fetch('/data');
 
         const data = await response.json(); // data is an array of objects { text: "...", profilePic: "..." }
         

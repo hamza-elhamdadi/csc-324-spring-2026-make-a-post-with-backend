@@ -24,6 +24,7 @@ header {
 
 .navbar-icon {
     inline-size: 3em;
+    padding: 5px;
 }
 
 .nav-list {
@@ -38,9 +39,9 @@ a:hover {
     text-decoration: dotted;
 }
 
-/* Main Page */
+/* Two-Column Layout */
 
-main {
+.two-column {
     display: grid;
     grid-template-columns: 1fr 2fr;
 
