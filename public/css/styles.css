@@ -52,27 +52,20 @@ a:hover {
     }
 }
 
-/* Sidebar */
+/* Center the child containers */
 
-.sidebar {
+.justify-content-center {
     display: flex;
     justify-content: center;
+    gap: 2em;
 
     margin-block: 20px;
     margin-inline: 10px;
 }
 
-.sidebar li {
-    margin-block: 1em;
-}
-
-.sidebar a {
-    text-decoration: none;
-}
-
 /* Form */
 
-.sidebar form {
+form {
     inline-size: 100%;
     display: flex;
     flex-direction: column;

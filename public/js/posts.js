@@ -13,14 +13,11 @@ class SocialMediaPost {
         const p = document.createElement('p');
         p.textContent = this.text;
 
-        // create the article to hold both the img and the paragraph
-        // <article> is a semantic HTML container. It's basically a <div> with more specific semantic meaning.
-        //     an <article> represents a standalone piece of content (like a recipe, a news article, or a social media post)
-        //     an <article> could be taken from one website and placed into another without losing any context.
-        this.article = document.createElement("article");
-        this.article.classList.add("post");
-        this.article.appendChild(image);
-        this.article.appendChild(p);
+        // create the div to hold both the img and the paragraph
+        this.div = document.createElement("div");
+        this.div.classList.add("post");
+        this.div.appendChild(image);
+        this.div.appendChild(p);
 
         // adds the div to the parentElement in the DOM
         this.addToDOM();
@@ -34,14 +31,14 @@ class SocialMediaPost {
         return this.text.localeCompare(otherPost.text);
     }
 
-    // removes the article from the DOM
+    // removes the div from the DOM
     remove(){
-        this.article.remove();
+        this.div.remove();
     }
 
-    // adds the article to the DOM
+    // adds the div to the DOM
     addToDOM(){
-        this.parentElement.appendChild(this.article);
+        this.parentElement.appendChild(this.div);
     }
 }
 

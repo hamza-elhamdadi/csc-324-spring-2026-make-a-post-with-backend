@@ -17,10 +17,6 @@
     <body>
         <!-- the .wrapper class creates empty space on both of left and the right of the page (see styles.css) -->
         <div class="wrapper">
-            
-            <!-- <header> is a semantic container 
-                Instead of using <div>, we use <header> to tell screen readers and web scrapers 
-                    that this element contains the header content (the page icon and navigation) -->
             <header>
                 <img class="navbar-icon" src="images/tree-icon.png" />
                 <nav>
@@ -31,39 +27,30 @@
             </header>
 
             <!-- the .two-column class creates a two column grid (see styles.css) 
-                This element is a <div> and not another semantic container, 
-                    because it is only being used to add CSS styling (it has no other semantic meaning) -->
-            <div class="two-column">
+                  each of its children (the two <div> elements) are a column -->
+            <main class="two-column">
 
-                <!-- <aside> is a semantic container. 
-                    Instead of using <div>, we use <aside> to tell screen readers and web scrapers
-                        that this element is only indirectly related to the main content -->
-                <aside class="sidebar">
-
-                    <!-- Notice that this form is disabled when the page initially loads -->
-                    <!-- It gets enabled at the end of the App.loadPosts method in posts.js -->
+                <!-- column 1 contains the form
+                        the .justify-content-center class centers the form within this div (see styles.css) -->
+                <div class="justify-content-center">
+                    
+                    <!-- Notice that this form is disabled when the page initially loads 
+                            This form gets enabled at the end of the App.loadPosts method in posts.js -->
                     <form id="add-post" disabled>
                         <label class="form-label" for="post-body">Write a post</label>
                         <input class="form-text" id="post-body" type="text" />
 
                         <button class="form-button">Submit Post</button>
                     </form>
-                </aside>
-                
-                <!-- <main> is a semantic container
-                    Instead of using <div>, we use <main> to tell screen readers and web scrapers
-                        that this element contains the main content on the page (the social media posts) -->
-                <main>
-                    <button class="form-button" id="sort">Sort Posts</button>
-                    <!-- We use a <div> for the post-container
-                            because this container is purely for layout purposes.
-                                We want to separate this box from the sort button above,
-                                and we want to be able to sort the elements in the post-container later -->
-                    <div class="post-container" id="post-container">
-                    </div>
-                </main>
+                </div>
 
-            </div> <!-- end .two-column <div> -->
+                <!-- column 2 contains the sort button and the post container -->
+                <div>
+                    <button class="form-button" id="sort">Sort Posts</button>
+                    <div class="post-container" id="post-container"></div>
+                </div>
+                
+            </main>
         </div> <!-- end .wrapper <div> -->
     </body>
 </html>
