@@ -5,21 +5,20 @@ const app = express();
 app.use(express.static('public'));
 
 app.get('/data', function(req, res){
-    const data = [
-            {
-                "text": "What a lovely day!",
-                "profilePic": "images/tree-icon.png"
-            },
-            {
-                "text": "Hey, how ya doing today?",
-                "profilePic": "images/tree-icon.png"
-            },
-            {
-                "text": "Sup.",
-                "profilePic": "images/tree-icon.png"
-            }
-        ];
-    res.json(data);
+    res.json([
+        {
+            "text": "What a lovely day!",
+            "profilePic": "images/tree-icon.png"
+        },
+        {
+            "text": "Hey, how ya doing today?",
+            "profilePic": "images/tree-icon.png"
+        },
+        {
+            "text": "Sup.",
+            "profilePic": "images/tree-icon.png"
+        }
+    ]);
 });
 
 app.listen(3000, function(){
