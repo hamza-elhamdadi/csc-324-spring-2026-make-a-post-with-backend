@@ -97,6 +97,14 @@ class App {
             profilePic: "images/tree-icon.png"
         }
 
+        fetch('/save-data', {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(obj)
+        })
+
         this.createPost(obj); // then we pass the object to createPost
         this.textInput.value = ""; // once we've created the post, we can clear the text <input>
 
